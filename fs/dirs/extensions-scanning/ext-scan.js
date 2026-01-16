@@ -1,10 +1,10 @@
-import fs from "fs/promises";
-import path from "path";
+import fs from 'fs/promises';
+import path from 'path';
 
 const folderPath = process.argv[2];
 
 if (!folderPath) {
-  process.stderr.write("Enter the path to the folder.\n");
+  process.stderr.write('Enter the path to the folder.\n');
   process.exit(1);
 }
 
@@ -22,7 +22,7 @@ fs.readdir(folderPath, (err, files) => {
     return acc;
   }, {});
 
-  process.stdout.write("Extensions:\n");
+  process.stdout.write('Extensions:\n');
   for (const [ext, count] of Object.entries(extensionCount)) {
     console.log(`${ext}: ${count}`);
   }
